@@ -40,7 +40,7 @@ const buscarCategorias = async(termino = '', res = response) => {
     const regex = new RegExp(termino, 'i');
 
     const categorias = await Categoria.find({
-        $or: [{ nombre: regex }, { usuario: regex }],
+        $or: [{ nombre: regex }],
         $and: [{ estado: true }]
     });
     return res.json({ results: categorias })
@@ -59,7 +59,7 @@ const buscarProductos = async(termino = '', res = response) => {
     const regex = new RegExp(termino, 'i');
 
     const productos = await Producto.find({
-        $or: [{ nombre: regex }, { categoria: regex }],
+        $or: [{ nombre: regex }],
         $and: [{ estado: true }]
     });
     return res.json({ results: productos })
