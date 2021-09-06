@@ -79,6 +79,8 @@ const googleSignin = async(req, res = response) => {
         }
 
 
+
+
         res.json({
             usuario,
             id_token
